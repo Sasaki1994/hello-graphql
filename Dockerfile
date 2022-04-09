@@ -2,9 +2,11 @@ FROM node:16-buster
 
 WORKDIR /usr/src/app
 
-# COPY package*.json ./
+COPY client/package.json client/yarn.lock ./client
+RUN yarn install
 
-# RUN npm install
+COPY server/package.json server/yarn.lock ./server
+RUN yarn install
 
 COPY . .
 
