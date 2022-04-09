@@ -1,9 +1,11 @@
 version: "3"
 
 services:
-  app:
+  server:
     build: ./
     ports:
-      - "8080:8080"
+      - "4000:4000"
     volumes:
-      - $PWD:/usr/src/app
+      - $PWD/server:/usr/src/server
+    working_dir: /usr/src/server
+    command: yarn dev
