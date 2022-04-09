@@ -1,0 +1,37 @@
+type Blog implements Node {
+  id: ID!
+  name: String!
+  posts: PostConnection!
+}
+
+type BlogConnection {
+  edges: [BlogEdge]
+}
+
+type BlogEdge {
+  node: Blog
+}
+
+interface Node {
+  id: ID!
+}
+
+type Post implements Node {
+  body: String!
+  id: ID!
+  title: String!
+}
+
+type PostConnection {
+  edges: [PostEdge]
+}
+
+type PostEdge {
+  node: Post
+}
+
+type Query {
+  blogs: BlogConnection!
+  node(id: ID!): Node
+  ping: String
+}

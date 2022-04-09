@@ -2,6 +2,7 @@ version: "3"
 
 services:
   server:
+    container_name: graphql_server
     build: ./
     ports:
       - "4000:4000"
@@ -9,3 +10,14 @@ services:
       - $PWD/server:/usr/src/server
     working_dir: /usr/src/server
     command: yarn dev
+  client:
+    container_name: graphql_client
+    build: ./
+    ports:
+      - "3000:3000"
+    volumes:
+      - $PWD/client:/usr/src/client
+    working_dir: /usr/src/client
+    command: yarn start
+    depends_on:
+      - server

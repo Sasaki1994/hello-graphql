@@ -1,0 +1,7 @@
+schema: http://graphql_server:4000/graphql
+generates:
+  schema.graphql:
+    plugins:
+      - schema-ast
+    config:
+    commentDescription: true
