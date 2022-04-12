@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<cff0cd0cc7cd1438d1aa0b350c7e1401>>
+ * @generated SignedSource<<57d34bf7e89575cf523762a4c1a1aaab>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -16,6 +16,13 @@ export type BlogListQuery$data = {
       readonly node: {
         readonly id: string;
         readonly name: string;
+        readonly posts: {
+          readonly edges: ReadonlyArray<{
+            readonly node: {
+              readonly title: string;
+            } | null;
+          } | null> | null;
+        };
       } | null;
     } | null> | null;
   };
@@ -26,43 +33,95 @@ export type BlogListQuery = {
 };
 
 const node: ConcreteRequest = (function(){
-var v0 = [
-  {
-    "alias": null,
-    "args": null,
-    "concreteType": "BlogConnection",
-    "kind": "LinkedField",
-    "name": "blogs",
-    "plural": false,
+var v0 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "id",
+  "storageKey": null
+},
+v1 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "name",
+  "storageKey": null
+},
+v2 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "title",
+  "storageKey": null
+};
+return {
+  "fragment": {
+    "argumentDefinitions": [],
+    "kind": "Fragment",
+    "metadata": null,
+    "name": "BlogListQuery",
     "selections": [
       {
         "alias": null,
         "args": null,
-        "concreteType": "BlogEdge",
+        "concreteType": "BlogConnection",
         "kind": "LinkedField",
-        "name": "edges",
-        "plural": true,
+        "name": "blogs",
+        "plural": false,
         "selections": [
           {
             "alias": null,
             "args": null,
-            "concreteType": "Blog",
+            "concreteType": "BlogEdge",
             "kind": "LinkedField",
-            "name": "node",
-            "plural": false,
+            "name": "edges",
+            "plural": true,
             "selections": [
               {
                 "alias": null,
                 "args": null,
-                "kind": "ScalarField",
-                "name": "id",
-                "storageKey": null
-              },
-              {
-                "alias": null,
-                "args": null,
-                "kind": "ScalarField",
-                "name": "name",
+                "concreteType": "Blog",
+                "kind": "LinkedField",
+                "name": "node",
+                "plural": false,
+                "selections": [
+                  (v0/*: any*/),
+                  (v1/*: any*/),
+                  {
+                    "alias": null,
+                    "args": null,
+                    "concreteType": "PostConnection",
+                    "kind": "LinkedField",
+                    "name": "posts",
+                    "plural": false,
+                    "selections": [
+                      {
+                        "alias": null,
+                        "args": null,
+                        "concreteType": "PostEdge",
+                        "kind": "LinkedField",
+                        "name": "edges",
+                        "plural": true,
+                        "selections": [
+                          {
+                            "alias": null,
+                            "args": null,
+                            "concreteType": "Post",
+                            "kind": "LinkedField",
+                            "name": "node",
+                            "plural": false,
+                            "selections": [
+                              (v2/*: any*/)
+                            ],
+                            "storageKey": null
+                          }
+                        ],
+                        "storageKey": null
+                      }
+                    ],
+                    "storageKey": null
+                  }
+                ],
                 "storageKey": null
               }
             ],
@@ -72,16 +131,6 @@ var v0 = [
         "storageKey": null
       }
     ],
-    "storageKey": null
-  }
-];
-return {
-  "fragment": {
-    "argumentDefinitions": [],
-    "kind": "Fragment",
-    "metadata": null,
-    "name": "BlogListQuery",
-    "selections": (v0/*: any*/),
     "type": "Query",
     "abstractKey": null
   },
@@ -90,19 +139,90 @@ return {
     "argumentDefinitions": [],
     "kind": "Operation",
     "name": "BlogListQuery",
-    "selections": (v0/*: any*/)
+    "selections": [
+      {
+        "alias": null,
+        "args": null,
+        "concreteType": "BlogConnection",
+        "kind": "LinkedField",
+        "name": "blogs",
+        "plural": false,
+        "selections": [
+          {
+            "alias": null,
+            "args": null,
+            "concreteType": "BlogEdge",
+            "kind": "LinkedField",
+            "name": "edges",
+            "plural": true,
+            "selections": [
+              {
+                "alias": null,
+                "args": null,
+                "concreteType": "Blog",
+                "kind": "LinkedField",
+                "name": "node",
+                "plural": false,
+                "selections": [
+                  (v0/*: any*/),
+                  (v1/*: any*/),
+                  {
+                    "alias": null,
+                    "args": null,
+                    "concreteType": "PostConnection",
+                    "kind": "LinkedField",
+                    "name": "posts",
+                    "plural": false,
+                    "selections": [
+                      {
+                        "alias": null,
+                        "args": null,
+                        "concreteType": "PostEdge",
+                        "kind": "LinkedField",
+                        "name": "edges",
+                        "plural": true,
+                        "selections": [
+                          {
+                            "alias": null,
+                            "args": null,
+                            "concreteType": "Post",
+                            "kind": "LinkedField",
+                            "name": "node",
+                            "plural": false,
+                            "selections": [
+                              (v2/*: any*/),
+                              (v0/*: any*/)
+                            ],
+                            "storageKey": null
+                          }
+                        ],
+                        "storageKey": null
+                      }
+                    ],
+                    "storageKey": null
+                  }
+                ],
+                "storageKey": null
+              }
+            ],
+            "storageKey": null
+          }
+        ],
+        "storageKey": null
+      }
+    ]
   },
   "params": {
-    "cacheID": "d97bead192f4b7200d3aa01a5137caac",
+    "cacheID": "727cd1fadc79be1925527bc96e2f8341",
     "id": null,
     "metadata": {},
     "name": "BlogListQuery",
     "operationKind": "query",
-    "text": "query BlogListQuery {\n  blogs {\n    edges {\n      node {\n        id\n        name\n      }\n    }\n  }\n}\n"
+    "text": "query BlogListQuery {\n  blogs {\n    edges {\n      node {\n        id\n        name\n        posts {\n          edges {\n            node {\n              title\n              id\n            }\n          }\n        }\n      }\n    }\n  }\n}\n"
   }
 };
 })();
 
-(node as any).hash = "87e298ac81f3ec2ccd3f8ebb59b635d9";
+(node as any).hash = "4b9bb0ca0a6af698fd3c708182c7da9d";
 
 export default node;

@@ -14,6 +14,13 @@ export const BlogList: React.VFC = () => {
             node {
               id
               name
+              posts {
+                edges {
+                  node {
+                    title
+                  }
+                }
+              }
             }
           }
         }
@@ -28,6 +35,11 @@ export const BlogList: React.VFC = () => {
       {blogs.edges?.map((edge) => (
           <li key={edge?.node?.id} >
             {edge?.node?.name}
+            <ul>
+              {edge?.node?.posts?.edges?.map((edge) => (
+                <li>{edge?.node?.title}</li>
+              ))}
+            </ul>
           </li>
         )
       )}

@@ -21,5 +21,7 @@ GraphQL tutorial reference to Web DB Press vol. 125.
     - Relayの[GraphQL Server Specification](https://relay.dev/docs/guides/graphql-server-specification/) ( /assets/relay_spec.png )
     - スキーマ、リゾルバのコード見ながら説明
     - 実際のリクエストとレスポンス
+    - クライアントサイドのコード
+    - クエリの変更(keyを追加しながら)
 
 - 今回実装しなかった、MutationとSubscription
