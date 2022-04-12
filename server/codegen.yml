@@ -7,5 +7,5 @@ generates:
       - "typescript-resolvers"
     config:
       mappers:
-        Blog: "../models#BlogModel"
-        Post: "../models#PostModel"
+        Blog: "../model#BlogModel"
+        Post: "../model#PostModel"

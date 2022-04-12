@@ -1,5 +1,5 @@
 import { GraphQLResolveInfo } from 'graphql';
-import { BlogModel, PostModel } from '../models';
+import { BlogModel, PostModel } from '../model';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
